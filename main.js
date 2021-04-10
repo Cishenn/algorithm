@@ -2,6 +2,8 @@
 import { quickSort } from './sort/quickSort.js';
 function main() {
     const arr = [1, 2, 8, 5, 1, 7];
-    console.log(quickSort(arr, 0, arr.length - 1));
+    //console.log(quickSort(arr, 0, arr.length - 1));
+    console.log(arr);
+    console.log(bubbleSort(arr));
 }
 main();
