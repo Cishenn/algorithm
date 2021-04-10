@@ -1,9 +1,9 @@
 // 2021年4月10日 11:45:48
-import { quickSort } from './sort/quickSort.js';
+import { quickSort, bubbleSort } from './sort/swap-sort.js';
 function main() {
     const arr = [1, 2, 8, 5, 1, 7];
-    //console.log(quickSort(arr, 0, arr.length - 1));
-    console.log(arr);
-    console.log(bubbleSort(arr));
+    console.log('raw: '+arr);
+    //console.log(quickSort(arr, 0, arr.length - 1).join('<'));
+    //console.log(bubbleSort(arr).join('<'));
 }
 main();
