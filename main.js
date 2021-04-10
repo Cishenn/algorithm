@@ -12,9 +12,15 @@ function main() {
     //console.log(quickSort(arr, 0, arr.length - 1).join('<'));
     //console.log(bubbleSort(arr).join('<'));
     //console.log(shellSort(arr).join('<'));
-    //console.log(bucketSort(arr).join('<'));
+    //console.log(insertSort(arr).join('<'));
+    //!!!console.log(heapSort(arr).join('<'));
     //console.log(selectSort(arr).join('<'));
+    //console.log(bucketSort(arr).join('<'));
+    //console.log(countSort(arr).join('<'));
+    console.log(radixSort(arr).join('<'));
     //console.log(mergeSort(arr).join('<'));
+    
+    
     //callDijkstra();
 }
 main();

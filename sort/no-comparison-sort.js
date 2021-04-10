@@ -3,7 +3,17 @@
 //No Comparison Sort includes countSort, bucketSort and radixSort
 
 function countSort(arr){
-
+    let maxVal=Math.max(...arr);
+    let bucket=new Array(maxVal+1).fill(0);
+    for(let v of arr){
+        bucket[v]++;
+    }
+    arr.length=0;
+    for(let i in bucket){
+        while(bucket[i]--)
+            arr.push(i);
+    }
+    return arr;
 }
 
 const DEFAULT_BUCKETSIZE=5;
@@ -42,7 +52,7 @@ function bucketSort(arr, bucketSize){
 }
 
 function radixSort(arr){
-
+    //TO-DO
 }
 
 export {countSort, bucketSort, radixSort}
