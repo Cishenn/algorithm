@@ -1,7 +1,18 @@
-/*
- * @Author: Cishenn Lee
- * @Date: 2021-04-10 13:31:53
- * @LastEditors: Cishenn Lee
- * @LastEditTime: 2021-04-10 13:31:56
- * @Description: Selection Sort contains shellSort and selectSort 
- */
+// Selection Sort includes heapSort and selectSort
+function heapSort(arr){
+
+}
+
+function selectSort(arr){
+    for(let i=0;i<arr.length-1;++i){
+        let index=i;
+        for(let j=i+1;j<arr.length;++j){
+            if(arr[j]<arr[index])
+                index=j;
+        }
+        [arr[i],arr[index]]=[arr[index],arr[i]];
+    }
+    return arr;
+}
+
+export {heapSort, selectSort}
