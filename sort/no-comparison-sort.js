@@ -51,8 +51,27 @@ function bucketSort(arr, bucketSize){
     return arr;
 }
 
-function radixSort(arr){
+function radixSort(arr, maxDigit){
     //TO-DO
+    let percent = 10,
+        division = 1;
+    const buckets = new Array(10);
+    for (let i = 0; i < buckets.length; ++i){
+        buckets[i] = [];
+    }
+
+    for (let i = 0; i < maxDigit; i++, percent*=10, division*=10){
+         for (let j = 0; j < arr.length; j++) {
+            buckets[(arr[j]%percent)/division].push(arr[j]);
+        }
+        
+        arr.length=0;
+        for (let j = 0; (j < buckets.length); j++) {
+            while (buckets[j].length)
+                arr.push(buckets[j].shift());
+        }
+    }
+    return arr;
 }
 
 export {countSort, bucketSort, radixSort}

@@ -1,7 +1,8 @@
 // Selection Sort includes heapSort and selectSort
-var len=0;
+var len=0; // len 是会变化的.. 代表着还没有排序好的数量
 function heapBuild(arr){
-    len=arr.length;
+    len = arr.length;
+    // TO-DO 为什么是从中序到根节点来构造.
     for(let i=Math.floor(arr.length>>1);i>=0;--i){
         heapify(arr, i);
     }
@@ -11,9 +12,9 @@ function heapify(arr,i){
     let left=i*2+1;
     let right=i*2+2;
     let largest=i;
-    if(left<arr.length&&arr[left]>arr[largest])
+    if(left<len&&arr[left]>arr[largest])
         largest=left;
-    if(right<arr.length&&arr[right]>arr[largest])
+    if(right<len&&arr[right]>arr[largest])
         largest=right;
     if(i!==largest){
         [arr[i],arr[largest]]=[arr[largest],arr[i]];
@@ -23,7 +24,12 @@ function heapify(arr,i){
 
 function heapSort(arr){
     heapBuild(arr);
-    // TO-DO
+    // TO-DO 为什么要从最右下子开始和根节点换?
+    for (let i = arr.length - 1; i > 0;--i){
+        [arr[0], arr[i]] = [arr[i], arr[0]];
+        len--;
+        heapify(arr, 0);
+    }
     return arr;
 }
 
