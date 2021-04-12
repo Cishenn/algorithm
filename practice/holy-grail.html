@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Holy Grail</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">header</div>
+    <div id="container">
+        <div id="left" class="column">Left Sidebar</div>
+        <div id="main" class="column">Main</div>
+        <div id="right" class="column">Right Sidebar</div>
+    </div>
+    <div id="footer">footer</div>
+</body>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-width: 550px;
+        }
+        #footer #header{
+            background-color: grey;
+            height: 100px;
+            line-height:100px;
+            text-align: center;
+        }
+        #container{
+            padding-left: 200px;
+            padding-right: 250px;
+            overflow: hidden;
+        }
+        #container .column{
+            float: left;
+        }
+        #footer{
+            clear: both;
+        }
+        #left{
+            background-color: #0ff;
+            width: 200px;
+        }
+        #right{
+            background-color: aqua;
+            width: 150px;
+        }
+    </style>
+</html>
