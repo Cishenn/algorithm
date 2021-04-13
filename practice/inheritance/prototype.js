@@ -14,5 +14,5 @@ function Child(){
 
 Child.prototype=new Patr('Son');
 
-let c=new Child();
+var c = new Child();
 c.greet();

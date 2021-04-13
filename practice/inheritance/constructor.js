@@ -1,16 +1,16 @@
 //Tue Apr 13 01:21:34 CST 2021
 //disadvantages: repeatly use method
-function Patr(name){
-    this.name=name??'Patr';
+function Patri(name){
+    this.name=name??'Patri';
 }
 
-Patr.prototype.tell=function (){
+Patri.prototype.tell=function (){
     console.log('I\'m '+this.name);
 }
 
-function Child(name){
-    return new Patr(name);
+function Kid(name){
+    Patri.call(this,name);
 }
 
-let c=new Child('Son');
+var c=new Kid('Son');
 c.tell();

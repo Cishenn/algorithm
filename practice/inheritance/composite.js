@@ -1,16 +1,16 @@
 //Tue Apr 13 01:27:49 CST 2021
 // composite prototye and constructor
-function Patr(name){
-    this.name=name??'Patr';
+function Pa(name){
+    this.name=name??'Pa';
 }
 
-Patr.prototype.response=()=>{
+Pa.prototype.response=function (){
     console.log(this.name+' is moving');
 }
 
-function Child(name){
-    return Patr(name);
+function Son(name){
+    Pa.call(this,name);
 }
 
-Child.prototype=new Patr('Son');
+Child.prototype=new Pa('Son');
 

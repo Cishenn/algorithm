@@ -11,8 +11,8 @@
  * @param {TreeNode} root
  * @return {number}
  */
-let prev=-1;
-let min=Infinity;
+let prev;
+let min;
 function inOrder(root){
     if(!root)
         return;
@@ -27,6 +27,10 @@ function inOrder(root){
 }
 
 var minDiffInBST = function(root) {
+    // 注意 pervperv 和 minmin不能在全局变量下初始化!
+    prev=-1;
+    min=Infinity;
+    
     inOrder(root);
     return min;
 };
