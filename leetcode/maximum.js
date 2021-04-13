@@ -1,3 +1,10 @@
+/*
+ * @Author: Cishenn Lee
+ * @Date: 2021-04-13 14:01:11
+ * @LastEditTime: 2021-04-13 21:15:55
+ * @FilePath: \algorithm\leetcode\maximum.js
+ * @Description: 
+ */
 /**
  * @param {number[]} nums
  * @return {string}

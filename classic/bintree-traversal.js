@@ -36,7 +36,7 @@ function getTree() {
 function preOrderRecursive(root) {
     if (!root)
         return;
-    
+
     executation(root);
     preOrderRecursive(root.left);
     preOrderRecursive(root.right);
@@ -45,7 +45,7 @@ function preOrderRecursive(root) {
 function inOrderRecursive(root) {
     if (!root)
         return;
-    
+
     inOrderRecursive(root.left);
     executation(root);
     inOrderRecursive(root.right);
@@ -54,7 +54,7 @@ function inOrderRecursive(root) {
 function postOrderRecursive(root) {
     if (!root)
         return;
-    
+
     postOrderRecursive(root.left);
     postOrderRecursive(root.right);
     executation(root);
@@ -65,7 +65,7 @@ function postOrderRecursive(root) {
 function preOrderInterative(root) {
     if (!root)
         return;
-    
+
     const stack = [];
     while (root || stack.length) {
         if (root) {
@@ -73,8 +73,7 @@ function preOrderInterative(root) {
 
             stack.push(root);
             root = root.left;
-        }
-        else {
+        } else {
             root = stack.pop();
             root = root.right;
         }
@@ -84,29 +83,48 @@ function preOrderInterative(root) {
 function inOrderInterative(root) {
     if (!root)
         return;
-    
+
     const stack = [];
     while (root || stack.length) {
         if (root) {
             stack.push(root);
             root = root.left;
-        }
-        else {
+        } else {
             root = stack.pop();
             executation(root);
             root = root.right;
         }
     }
-    
+
 }
 
 function postOrderInterative(root) {
+    if (!root)
+        return;
 
+    let stack = [];
+    let lastVisitedNode = new TreeNode();
+    while (root || stack.length) {
+        if (root) {
+            stack.push(root);
+            root = root.left;
+        } else {
+            root = stack.slice(-1)[0];
+            if (!root.right || lastVisitedNode === root.right) {
+                stack.pop();
+                executation(root);
+                lastVisitedNode = root;
+                root = null;
+            } else {
+                root = root.right;
+            }
+        }
+    }
 }
 
 
 
-let root=getTree();
+let root = getTree();
 
 // preOrderInterative(root);
 // inOrderInterative(root);
@@ -115,4 +133,3 @@ postOrderInterative(root);
 // preOrderRecursive(root);
 // inOrderRecursive(root);
 // postOrderRecursive(root);
-
