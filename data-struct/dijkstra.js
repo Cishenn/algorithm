@@ -1,7 +1,7 @@
 /*
  * @Author: Cishenn Lee
  * @Date: 2021-04-10 20:06:52
- * @LastEditTime: 2021-04-10 22:00:31
+ * @LastEditTime: 2021-04-14 18:00:10
  * @FilePath: \algorithm\classic\dijkstra.js
  * @Description: 
  */
@@ -53,7 +53,7 @@ function dijkstra(matrix, start = 0) {
 }
 
 function callDijkstra() {
-    console.log(dijkstra(arr, 0));
+    console.log(dijkstra(arr, 1));
 }
 
 const MAX = Infinity;
